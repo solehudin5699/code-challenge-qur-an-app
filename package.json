@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:cover": "npm run test -- run --coverage",
+    "test:cover": "npm run test -- --coverage",
     "test:watch:cover": "npm run test:watch -- --coverage"
   },
   "author": {

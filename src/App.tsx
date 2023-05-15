@@ -1,4 +1,4 @@
-import Button from './components/base/Button/Button';
+import Button from '@/components/base/Button';
 
 function App() {
   return (

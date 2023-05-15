@@ -23,7 +23,7 @@ export default mergeConfig(
       environment: 'jsdom',
       silent: true,
       coverage: {
-        enabled: true,
+        enabled: false,
         include: ['src/**/*.{ts,tsx}'],
         exclude: [
           'coverage/**',
