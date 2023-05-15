@@ -8,7 +8,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'jsx-a11y'],
   env: {
     es2020: true,
     es6: true,
@@ -85,5 +85,15 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 2,
     '@typescript-eslint/no-unused-vars': 2,
     '@typescript-eslint/sort-type-union-intersection-members': 2,
+    'jsx-a11y/alt-text': [
+      2,
+      {
+        elements: ['img', 'object', 'area', 'input[type="image"]'],
+        img: ['Image'],
+        object: ['Object'],
+        area: ['Area'],
+        'input[type="image"]': ['InputImage'],
+      },
+    ],
   },
 };
