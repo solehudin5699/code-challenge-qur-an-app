@@ -1,4 +1,4 @@
-import { defineConfig, mergeConfig } from 'vitest/config';
+import { defineConfig, mergeConfig, defaultExclude, coverageConfigDefaults } from 'vitest/config';
 import viteConfig from './vite.config';
 
 //SOURCE: https://vitest.dev/config/
@@ -8,11 +8,7 @@ export default mergeConfig(
     test: {
       include: ['src/**/*.test.{ts,tsx}'],
       exclude: [
-        '**/node_modules/**',
-        '**/dist/**',
-        '**/cypress/**',
-        '**/.{idea,git,cache,output,temp}/**',
-        '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
+        ...defaultExclude,
         'src/assets/**',
         'src/configs/**',
         'src/context/**',
@@ -26,18 +22,7 @@ export default mergeConfig(
         enabled: false,
         include: ['src/**/*.{ts,tsx}'],
         exclude: [
-          'coverage/**',
-          'dist/**',
-          'packages/*/test{,s}/**',
-          '**/*.d.ts',
-          'cypress/**',
-          'test{,s}/**',
-          'test{,-*}.{js,cjs,mjs,ts,tsx,jsx}',
-          '**/*{.,-}test.{js,cjs,mjs,ts,tsx,jsx}',
-          '**/*{.,-}spec.{js,cjs,mjs,ts,tsx,jsx}',
-          '**/__tests__/**',
-          '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
-          '**/.{eslint,mocha,prettier}rc.{js,cjs,yml}',
+          ...coverageConfigDefaults.exclude,
           'src/assets/**',
           'src/configs/**',
           'src/context/**',
