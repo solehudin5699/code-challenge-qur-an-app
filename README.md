@@ -1,5 +1,7 @@
 # Code Base FE CSR
 
+Codebase FE using React+Vite. Using a routing based on file/folder names.
+
 ## Installation
 
 - Clone repository
@@ -47,10 +49,12 @@
   - name of constanta
 - use useHookName
   - name of custom hook or file custom hook
+- Use english for name of variable, function, route, file, folder, constanta, etc.
 
 ## Commit
 
-- Use conventional commit for commit message. See `https://www.conventionalcommits.org/en/v1.0.0/`.
+- Use conventional commit for commit message. See [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- use english for commit message
 
 ## Team Work Flow
 
