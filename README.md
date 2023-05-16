@@ -57,3 +57,8 @@
 <div>
   <img width="100%" src="https://firebasestorage.googleapis.com/v0/b/test-40865.appspot.com/o/teamwork%20flow.png?alt=media&token=7c637ad8-66a3-4a81-88c2-6c8dcbc17ff7"/>
 </div>
+
+## Reference
+
+- [Generoted](https://github.com/oedotme/generouted)
+- [TailwindCSS](https://tailwindcss.com/)

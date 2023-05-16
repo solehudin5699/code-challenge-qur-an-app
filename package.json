@@ -24,10 +24,12 @@
     "url": "https://gitlab.playcourt.id/solehudin5699/csr-fe-codebase"
   },
   "dependencies": {
+    "@generouted/react-router": "^1.12.7",
     "axios": "^1.4.0",
     "dayjs": "^1.11.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
