@@ -29,6 +29,7 @@ export default mergeConfig(
           'src/services/**',
           'src/test-utils/**',
         ],
+        reporter: ['text', 'lcov'],
       },
       setupFiles: './vitest.setup.ts',
     },

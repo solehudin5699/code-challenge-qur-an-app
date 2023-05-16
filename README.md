@@ -64,5 +64,5 @@ Codebase FE using React+Vite. Using a routing based on file/folder names.
 
 ## Reference
 
-- [Generoted](https://github.com/oedotme/generouted)
+- [Generouted](https://github.com/oedotme/generouted)
 - [TailwindCSS](https://tailwindcss.com/)
