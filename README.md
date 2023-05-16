@@ -20,13 +20,13 @@ Codebase FE using React+Vite. Using a routing based on file/folder names.
 - Run `npm run test`
 - Run `npm run test:cover`
 - See other command in package.jsom
-- Open file from directory `./coverage/index.html` in browser
+- Open file from directory `./coverage/lcov-report/index.html` in browser
 
 ## Production Build
 
 - Run `npm run build`
 - Run `npm run preview`
-- Open `localhost:8080` in browser
+- Open `localhost:3000` in browser
 
 ## Rule & Folder Structure
 
