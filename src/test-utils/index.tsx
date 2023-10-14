@@ -1,8 +1,16 @@
 import { ReactElement } from 'react';
 import { render, RenderOptions, fireEvent } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const customRender = (ui: ReactElement, options: RenderOptions = {}) => {
-  return render(<>{ui}</>, { ...options });
+  const queryClient = new QueryClient();
+  return render(
+    <>
+      {' '}
+      <QueryClientProvider client={queryClient}> {ui}</QueryClientProvider>
+    </>,
+    { ...options }
+  );
 };
 
 export function dispatchEvt(node: any, type: string, data: any) {

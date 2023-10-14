@@ -11,16 +11,17 @@ export default function fetch<T = any>(config: AxiosRequestConfig<any>) {
       .then((res) => {
         resolve(res.data);
       })
-      .catch((err) => {
+      .catch((error) => {
         const defaultError = {
           code: 500,
           status: 'error',
           message: 'Failed to fetch data. Please contact developer.',
+          error,
         };
 
-        if (typeof err.response === 'undefined') reject(defaultError);
-        else if (typeof err.response.data === 'undefined') reject(defaultError);
-        else reject(err.response.data);
+        if (typeof error.response === 'undefined') reject(defaultError);
+        else if (typeof error.response.data === 'undefined') reject(defaultError);
+        else reject(error.response.data);
       });
   });
 }

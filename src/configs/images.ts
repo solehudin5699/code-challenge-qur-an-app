@@ -1,1 +1,1 @@
-export { default as LOGO_REACT } from '../assets/images/react.svg';
+export { default as LOGO_APP } from '../assets/images/logo.svg';

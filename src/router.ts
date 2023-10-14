@@ -5,9 +5,10 @@ import { components, hooks, utils } from '@generouted/react-router/client'
 
 export type Path =
   | `/`
+  | `/surah/:id`
 
 export type Params = {
-  
+  '/surah/:id': { id: string }
 }
 
 export type ModalPath = never

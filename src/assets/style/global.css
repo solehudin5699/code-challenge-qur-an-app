@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Amiri;
+    font-weight: 400;
+    src: url(../fonts/Amiri-Regular.ttf);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Maddinna;
+    font-weight: 400;
+    src: url(../fonts/MADDINA.ttf);
+    font-display: swap;
+  }
+}
+* {
+  outline: none;
+}

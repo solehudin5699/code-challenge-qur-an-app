@@ -1,1 +1,2 @@
-export { default } from '@/components/pages/Home';
+import { lazy } from 'react';
+export default lazy(() => import('@/components/pages/Home'));
