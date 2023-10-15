@@ -17,7 +17,7 @@ function Surah() {
 
   const summary = (
     <h6 className="text-center font-normal">
-      {data?.name_translations.id} | {data?.number_of_ayah} ayat | {data?.place} | {data?.type}
+      {data?.data?.namaLatin} | {data?.data?.jumlahAyat} ayat | {data?.data?.tempatTurun}
     </h6>
   );
 
@@ -27,7 +27,7 @@ function Surah() {
         skeletonHeader
       ) : (
         <div className="flex flex-col">
-          <h1 className="text-center text-4xl font-medium">Surah {data?.name}</h1>
+          <h1 className="text-center text-4xl font-medium">Surah {data?.data?.nama}</h1>
           {summary}
         </div>
       )}
@@ -36,13 +36,13 @@ function Surah() {
           .fill(null)
           .map((_, idx) => renderSkeletonLoading(idx))}
       {!isLoading &&
-        (data?.verses || []).map((el, idx) => (
+        (data?.data?.ayat || []).map((el, idx) => (
           <div className="bg-white rounded-lg p-3 my-3 relative" key={idx}>
             <div className="grid place-content-center bg-primary-300 rounded-full h-10 w-10 text-white font-semibold shadow-xl mb-3">
-              {el.number}
+              {el.nomorAyat}
             </div>
-            <p className="font-[Amiri] text-right text-3xl leading-[56px]">{el.text}</p>
-            <p className="text-justify font-normal">{el.translation_id}</p>
+            <p className="font-[Amiri] text-right text-3xl leading-[56px]">{el.teksArab}</p>
+            <p className="text-justify font-normal">{el.teksIndonesia}</p>
           </div>
         ))}
     </div>

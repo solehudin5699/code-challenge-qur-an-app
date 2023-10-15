@@ -12,7 +12,7 @@ function Main(props: Props) {
   const { data: listSurah } = useGetQuran();
   const navigate = useNavigate();
   const listSurahOptions = useMemo(
-    () => (listSurah || []).map((el) => ({ label: el.name, value: el.number_of_surah })),
+    () => (listSurah?.data || []).map((el) => ({ label: el.namaLatin, value: el.nomor })),
     [listSurah]
   );
 
@@ -31,14 +31,14 @@ function Main(props: Props) {
               placeholder="Select surah"
             />
           </div>
-          {(listSurah || []).map((el, idx) => (
+          {(listSurah?.data || []).map((el, idx) => (
             <Link
               className="h-12 w-full bg-primary-100 rounded my-2 flex items-center gap-3 text-white px-2 cursor-pointer shadow"
               key={idx}
-              to={`/surah/${el.number_of_surah}`}
+              to={`/surah/${el.nomor}`}
             >
-              <div className="h-8 w-8 rounded-full grid place-content-center">{el.number_of_surah}.</div>
-              <h6 className="md:block hidden">{el.name}</h6>
+              <div className="h-8 w-8 rounded-full grid place-content-center">{el.nomor}.</div>
+              <h6 className="md:block hidden">{el.namaLatin}</h6>
             </Link>
           ))}
         </div>

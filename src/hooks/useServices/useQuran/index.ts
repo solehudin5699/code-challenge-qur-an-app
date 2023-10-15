@@ -1,8 +1,8 @@
-import { IResponseQuran, IResponseSurah, getQuran, getSurah } from '@/services/quran';
+import { TResponseQuran, IResponseSurah, getQuran, getSurah } from '@/services/quran';
 import useAppQuery from '../../useAppQuery';
 
 export const useGetQuran = () => {
-  return useAppQuery<IResponseQuran>(['quran'], getQuran);
+  return useAppQuery<TResponseQuran>(['quran'], getQuran);
 };
 
 export const useGetSurah = (id: number) => {

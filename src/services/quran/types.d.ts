@@ -1,40 +1,71 @@
-export interface IResponseItemQuran {
-  name: string;
-  name_translations: {
-    ar: string;
-    en: string;
-    id: string;
-  };
-  number_of_ayah: number;
-  number_of_surah: number;
-  place: string;
-  recitation: string;
-  type: string;
+export interface ICommonResponse<Data = any> {
+  code: string;
+  data?: Data;
+  message: string;
+  status: string;
 }
-export type IResponseQuran = IResponseItemQuran[];
 
-export interface IResponseSurah {
-  name: string;
-  name_translations: {
-    ar: string;
-    en: string;
-    id: string;
+export interface IResponseItemQuran {
+  arti: string;
+  audioFull: {
+    '01': string;
+    '02': string;
+    '03': string;
+    '04': string;
+    '05': string;
   };
-  number_of_ayah: number;
-  number_of_surah: number;
-  place: string;
-  recitations: { audio_url: string, name: string; }[];
-  tafsir: {
-    id: {
-      kemenag: {
-        name: string;
-        source: string;
-        text: {
-          [key: string]: string;
-        };
-      };
+  deskripsi: string;
+  jumlahAyat: number;
+  nama: string;
+  namaLatin: string;
+  nomor: number;
+  tempatTurun: string;
+}
+export type TResponseQuran = ICommonResponse<IResponseItemQuran[]>;
+
+export interface IDataSurah {
+  arti: string;
+  audioFull: {
+    '01': string;
+    '02': string;
+    '03': string;
+    '04': string;
+    '05': string;
+  };
+  ayat: {
+    audio: {
+      '01': string;
+      '02': string;
+      '03': string;
+      '04': string;
+      '05': string;
     };
-  };
-  type: string;
-  verses: { number: number; text: string; translation_en: string; translation_id: string }[];
+    nomorAyat: number;
+    teksArab: string;
+    teksIndonesia: string;
+    teksLatin: string;
+  }[];
+  deskripsi: string;
+  jumlahAyat: number;
+  nama: string;
+  namaLatin: string;
+  nomor: number;
+  suratSebelumnya:
+    boolean | {
+        jumlahAyat: number;
+        nama: string;
+        namaLatin: string;
+        nomor: number;
+      };
+  suratSelanjutnya:
+    boolean | {
+        jumlahAyat: number;
+        nama: string;
+        namaLatin: string;
+        nomor: number;
+      };
+  tempatTurun: string;
+}
+export interface IResponseSurah extends ICommonResponse {
+  data: IDataSurah;
 }
