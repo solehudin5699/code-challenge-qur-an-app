@@ -28,6 +28,10 @@ Source code FE using React+Vite, tailwindCSS, radix-UI, etc. Using a routing bas
 - Run `npm run preview`
 - Open `localhost:8080` in browser
 
+## External API
+
+- Use https://equran.id/apidev (base_url https://equran.id)
+
 ## Authentication and Demo
 
 - Use username admin and password admin for login
@@ -37,7 +41,7 @@ Source code FE using React+Vite, tailwindCSS, radix-UI, etc. Using a routing bas
 - Use conventional commit for commit message. See [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 - use english for commit message
 
-## Team Work Flow
+## Screenshot
 
 <div>
   <img width="100%" src="docs/ss-demo.png"/>
