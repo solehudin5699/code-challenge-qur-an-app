@@ -3,24 +3,48 @@ import { useParams } from '@/router';
 
 function Surah() {
   const { id } = useParams('/surah/:id');
-  const { data } = useGetSurah(Number(id));
+  const { data, isLoading } = useGetSurah(Number(id));
+
+  const skeletonHeader = (
+    <div className="w-full flex flex-col items-center gap-2 mb-5">
+      <div className="w-28 h-10 rounded-lg bg-blue-900 animate-pulse" />
+      <div className="w-56 h-5 rounded-lg bg-blue-900 animate-pulse" />
+    </div>
+  );
+  const renderSkeletonLoading = (idx: number) => (
+    <div className="w-full h-40 rounded-lg bg-white animate-pulse mb-3" key={idx} />
+  );
+
+  const summary = (
+    <h6 className="text-center font-normal">
+      {data?.name_translations.id} | {data?.number_of_ayah} ayat | {data?.place} | {data?.type}
+    </h6>
+  );
+
   return (
     <div className="w-full py-10 px-3">
-      <div className="flex flex-col">
-        <h1 className="text-center text-4xl font-medium">Surah {data?.name}</h1>
-        <h6 className="text-center font-normal">
-          {data?.name_translations.id} | {data?.number_of_ayah} ayat | {data?.place} | {data?.type}
-        </h6>
-      </div>
-      {(data?.verses || []).map((el, idx) => (
-        <div className="bg-white rounded-lg p-3 my-3 relative" key={idx}>
-          <div className="grid place-content-center bg-primary-300 rounded-full h-10 w-10 text-white font-semibold shadow-xl mb-3">
-            {el.number}
-          </div>
-          <p className="font-[Amiri] text-right text-3xl leading-[56px]">{el.text}</p>
-          <p className="text-justify font-normal">{el.translation_id}</p>
+      {isLoading ? (
+        skeletonHeader
+      ) : (
+        <div className="flex flex-col">
+          <h1 className="text-center text-4xl font-medium">Surah {data?.name}</h1>
+          {summary}
         </div>
-      ))}
+      )}
+      {isLoading &&
+        Array(10)
+          .fill(null)
+          .map((_, idx) => renderSkeletonLoading(idx))}
+      {!isLoading &&
+        (data?.verses || []).map((el, idx) => (
+          <div className="bg-white rounded-lg p-3 my-3 relative" key={idx}>
+            <div className="grid place-content-center bg-primary-300 rounded-full h-10 w-10 text-white font-semibold shadow-xl mb-3">
+              {el.number}
+            </div>
+            <p className="font-[Amiri] text-right text-3xl leading-[56px]">{el.text}</p>
+            <p className="text-justify font-normal">{el.translation_id}</p>
+          </div>
+        ))}
     </div>
   );
 }

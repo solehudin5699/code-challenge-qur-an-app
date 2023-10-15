@@ -19,3 +19,22 @@
 * {
   outline: none;
 }
+
+.bg-gradient {
+  background-image: linear-gradient(-45deg, #11009e, #4942e4, #8696fe, #c4b0ff);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  -webkit-animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

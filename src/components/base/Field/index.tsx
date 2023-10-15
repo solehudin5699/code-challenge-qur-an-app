@@ -1,4 +1,2 @@
-import { lazy } from 'react';
-
-export const TextField = lazy(() => import('./TextField'));
-export const SelectField = lazy(() => import('./SelectField'));
+export { default as TextField } from './TextField';
+export { default as SelectField } from './SelectField';
